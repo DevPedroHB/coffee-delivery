@@ -15,17 +15,17 @@ export const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar {
     width: 0.6rem;
     height: 0.6rem;
-    background-color: ${(props) => props.theme["base-button"]};
+    background-color: ${(props) => props.theme["base-input"]};
     border-radius: 8px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: ${(props) => props.theme["yellow"]};
+    background-color: ${(props) => props.theme["yellow-light"]};
     border-radius: 8px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: ${(props) => props.theme["yellow-light"]};
+    background-color: ${(props) => props.theme["yellow"]};
   }
 
   body {
@@ -41,7 +41,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.3;
   }
 
-  @media screen and (max-width: 1204px) {
+  @media screen and (max-width: 1024px) {
     html {
       font-size: 97.5%;
     }
