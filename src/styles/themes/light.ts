@@ -14,5 +14,5 @@ export const lightTheme = {
   "base-input": "#ededed",
   "base-card": "#f3f2f2",
   background: "#fafafa",
-  withe: "#ffffff",
+  white: "#ffffff",
 };
