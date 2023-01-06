@@ -1,0 +1,16 @@
+import { Card } from "../../../../components/Card";
+import cafes from "../../../../utils/cafes.json";
+import { CafesContainer, CafesGrid } from "./styles";
+
+export default function Cafes() {
+  return (
+    <CafesContainer id="cafes">
+      <h1>Nossos Cafés</h1>
+      <CafesGrid>
+        {cafes.map((cafe) => (
+          <Card {...cafe} />
+        ))}
+      </CafesGrid>
+    </CafesContainer>
+  );
+}

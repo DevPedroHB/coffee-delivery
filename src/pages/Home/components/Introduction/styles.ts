@@ -61,7 +61,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Items = styled.div`
+export const Items = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
@@ -71,7 +71,7 @@ export const Items = styled.div`
   }
 `;
 
-export const Item = styled.div<ItemsProps>`
+export const Item = styled.li<ItemsProps>`
   display: flex;
   align-items: center;
   gap: 0.75rem;

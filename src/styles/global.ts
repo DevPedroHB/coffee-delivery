@@ -20,12 +20,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: ${(props) => props.theme["yellow-light"]};
+    background-color: ${(props) => props.theme["yellow"]};
     border-radius: 8px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: ${(props) => props.theme["yellow"]};
+    background-color: ${(props) => props.theme["yellow-dark"]};
   }
 
   body {
