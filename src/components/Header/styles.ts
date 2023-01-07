@@ -32,12 +32,11 @@ export const Action = styled.div`
     }
   }
 
-  button {
+  a {
     position: relative;
     display: flex;
     align-items: center;
     padding: 0.5rem;
-    border: 0;
     border-radius: 6px;
     background: ${(props) => props.theme["yellow-light"]};
     cursor: pointer;
@@ -60,6 +59,7 @@ export const Action = styled.div`
       border-radius: 50%;
       font-weight: 700;
       font-size: 0.75rem;
+      line-height: 0;
     }
   }
 `;
