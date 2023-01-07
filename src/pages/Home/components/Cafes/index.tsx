@@ -8,7 +8,7 @@ export default function Cafes() {
       <h1>Nossos Cafés</h1>
       <CafesGrid>
         {cafes.map((cafe) => (
-          <Card {...cafe} />
+          <Card key={cafe.id} {...cafe} />
         ))}
       </CafesGrid>
     </CafesContainer>
