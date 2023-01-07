@@ -1,18 +1,7 @@
-import {
-  Bank,
-  CreditCard,
-  CurrencyDollar,
-  MapPinLine,
-  Money,
-} from "phosphor-react";
-import { Input } from "../../../../components/Input";
-import {
-  Card,
-  CardHeader,
-  Container,
-  FormContainer,
-  PaymentOptions,
-} from "./styles";
+import { CurrencyDollar, MapPinLine } from "phosphor-react";
+import { AddressForm } from "../AddressForm";
+import { PaymentMethods } from "../PaymentMethods";
+import { Card, CardHeader, Container } from "./styles";
 
 export function CheckoutForm() {
   return (
@@ -26,15 +15,7 @@ export function CheckoutForm() {
             <small>Informe o endereço onde deseja receber seu pedido</small>
           </div>
         </CardHeader>
-        <FormContainer>
-          <Input placeholder="CEP" type="number" className="cep" />
-          <Input placeholder="Rua" className="street" />
-          <Input placeholder="Número" type="number" />
-          <Input placeholder="Complemento" className="complement" />
-          <Input placeholder="Bairro" />
-          <Input placeholder="Cidade" />
-          <Input placeholder="UF" className="uf" />
-        </FormContainer>
+        <AddressForm />
       </Card>
       <Card>
         <CardHeader iconColor="purple">
@@ -44,20 +25,7 @@ export function CheckoutForm() {
             <small>Informe o endereço onde deseja receber seu pedido</small>
           </div>
         </CardHeader>
-        <PaymentOptions>
-          <button type="button">
-            <CreditCard size={16} />
-            Cartão de Crédito
-          </button>
-          <button type="button">
-            <Bank size={16} />
-            Cartão de Débito
-          </button>
-          <button type="button">
-            <Money size={16} />
-            Dinheiro
-          </button>
-        </PaymentOptions>
+        <PaymentMethods />
       </Card>
     </Container>
   );
