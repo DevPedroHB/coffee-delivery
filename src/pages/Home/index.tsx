@@ -1,12 +1,12 @@
-import Cafes from "./components/Cafes";
-import Introduction from "./components/Introduction";
+import { Introduction } from "./components/Introduction";
+import { OurCoffees } from "./components/OurCoffees";
 import { HomeContainer } from "./styles";
 
 export function Home() {
   return (
     <HomeContainer>
       <Introduction />
-      <Cafes />
+      <OurCoffees />
     </HomeContainer>
   );
 }

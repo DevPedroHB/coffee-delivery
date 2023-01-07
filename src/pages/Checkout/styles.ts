@@ -1,54 +1,18 @@
 import styled from "styled-components";
 
-const ICON_COLORS = {
-  yellowDark: "yellow-dark",
-  purple: "purple",
-} as const;
-
-interface CardHeaderProps {
-  iconColor: keyof typeof ICON_COLORS;
-}
+export const BaseCard = styled.div`
+  background: ${(props) => props.theme["base-card"]};
+  padding: 2rem;
+  border-radius: 6px;
+`;
 
 export const CheckoutContainer = styled.form`
-  display: flex;
-  gap: 2rem;
-`;
-
-export const CheckoutColumn = styled.div`
   display: grid;
-  height: min-content;
-  gap: 0.75rem;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  margin: 2rem 0;
 
-  h1 {
-    font-family: "Baloo 2", sans-serif;
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: ${(props) => props.theme["base-subtitle"]};
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
   }
-`;
-
-export const CardHeader = styled.div<CardHeaderProps>`
-  display: flex;
-  margin-bottom: 2rem;
-
-  svg {
-    margin-right: 0.5rem;
-    color: ${(props) => props.theme[ICON_COLORS[props.iconColor]]};
-  }
-
-  div {
-    display: grid;
-
-    span {
-      color: ${(props) => props.theme["base-subtitle"]};
-    }
-
-    small {
-      font-size: 0.875rem;
-    }
-  }
-`;
-
-export const CardBody = styled.div`
-  grid-template-columns: repeat(3, 1fr);
 `;

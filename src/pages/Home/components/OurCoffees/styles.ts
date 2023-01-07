@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CafesContainer = styled.section`
+export const Container = styled.section`
   padding: 2rem 0;
 
   h1 {
@@ -12,7 +12,7 @@ export const CafesContainer = styled.section`
   }
 `;
 
-export const CafesGrid = styled.div`
+export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;

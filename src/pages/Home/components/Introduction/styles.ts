@@ -11,12 +11,11 @@ interface ItemsProps {
   itemColor: keyof typeof ITEM_COLORS;
 }
 
-export const IntroductionContainer = styled.section`
+export const Container = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 0;
-  /* filter: blur(80px); */
 
   img {
     max-width: 100%;
@@ -33,7 +32,7 @@ export const IntroductionContainer = styled.section`
   }
 `;
 
-export const IntroductionContent = styled.div`
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4.125rem;

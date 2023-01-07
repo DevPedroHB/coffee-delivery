@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CafesCardContainer = styled.div`
+export const Container = styled.div`
   background: ${(props) => props.theme["base-card"]};
   border-radius: 6px 36px 6px 36px;
   padding: 1.25rem 1.5rem;
@@ -15,7 +15,7 @@ export const CafesCardContainer = styled.div`
   }
 `;
 
-export const CardTags = styled.div`
+export const Tags = styled.div`
   margin: 0.75rem 0 1rem 0;
   display: flex;
   gap: 0.25rem;
@@ -31,7 +31,7 @@ export const CardTags = styled.div`
   }
 `;
 
-export const CardInfo = styled.div`
+export const Info = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -52,7 +52,7 @@ export const CardInfo = styled.div`
   }
 `;
 
-export const CardFooter = styled.div`
+export const Footer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -70,41 +70,22 @@ export const CardFooter = styled.div`
   }
 `;
 
-export const FooterButtons = styled.div`
+export const Buttons = styled.div`
   display: flex;
   gap: 0.5rem;
+`;
 
-  div {
-    display: flex;
-    align-items: center;
-    background: ${(props) => props.theme["base-button"]};
-    border-radius: 6px;
-    gap: 0.25rem;
-    padding: 0.5rem;
+export const Button = styled.button`
+  display: flex;
+  border-radius: 6px;
+  border: 0;
+  background: ${(props) => props.theme["purple-dark"]};
+  padding: 0.5rem;
+  color: ${(props) => props.theme["base-card"]};
+  cursor: pointer;
+  transition: all 0.2s;
 
-    svg {
-      color: ${(props) => props.theme["purple"]};
-      cursor: pointer;
-      transition: all 0.2s;
-
-      &:hover {
-        color: ${(props) => props.theme["purple-dark"]};
-      }
-    }
-  }
-
-  button {
-    display: flex;
-    border-radius: 6px;
-    border: 0;
-    background: ${(props) => props.theme["purple-dark"]};
-    padding: 0.5rem;
-    color: ${(props) => props.theme["base-card"]};
-    cursor: pointer;
-    transition: all 0.2s;
-
-    &:hover {
-      background: ${(props) => props.theme["purple"]};
-    }
+  &:hover {
+    background: ${(props) => props.theme["purple"]};
   }
 `;

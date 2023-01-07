@@ -5,6 +5,11 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 2rem 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background: ${(props) => props.theme.background};
 
   img {
     width: 5.309rem;
@@ -26,6 +31,7 @@ export const Action = styled.div`
     padding: 0.5rem;
     font-size: 0.875rem;
     cursor: pointer;
+    line-height: 0;
 
     svg {
       color: ${(props) => props.theme["purple"]};

@@ -1,17 +1,11 @@
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 import coffeeImg from "../../../../assets/coffee-introduction.png";
-import {
-  IntroductionContainer,
-  IntroductionContent,
-  Item,
-  Items,
-  Title,
-} from "./styles";
+import { Container, Content, Item, Items, Title } from "./styles";
 
-export default function Introduction() {
+export function Introduction() {
   return (
-    <IntroductionContainer id="introduction">
-      <IntroductionContent>
+    <Container id="introduction">
+      <Content>
         <Title>
           <h1>Encontre o café perfeito para qualquer hora do dia</h1>
           <p>
@@ -45,8 +39,8 @@ export default function Introduction() {
             <span>O café chega fresquinho até você</span>
           </Item>
         </Items>
-      </IntroductionContent>
+      </Content>
       <img src={coffeeImg} alt="" />
-    </IntroductionContainer>
+    </Container>
   );
 }

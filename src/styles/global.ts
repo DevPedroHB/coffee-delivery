@@ -13,15 +13,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width: 0.6rem;
-    height: 0.6rem;
+    width: 0.4rem;
+    height: 0.4rem;
     background-color: ${(props) => props.theme["base-input"]};
-    border-radius: 8px;
+    border-radius: 6px;
   }
 
   ::-webkit-scrollbar-thumb {
     background-color: ${(props) => props.theme["yellow"]};
-    border-radius: 8px;
+    border-radius: 6px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
