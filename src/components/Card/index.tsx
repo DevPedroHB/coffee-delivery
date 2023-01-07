@@ -1,5 +1,4 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
-import expressoImg from "../../assets/expresso.png";
 import {
   CafesCard,
   CardFooter,
@@ -25,11 +24,9 @@ export function Card({
   description,
   price,
 }: CardProps) {
-  // console.log(new URL(imgUrl).pathname);
-
   return (
     <CafesCard key={id}>
-      <img src={expressoImg} alt={`Imagem ${name}`} />
+      <img src={imgUrl} alt={`Imagem ${name}`} />
       <CardTags>
         {tags.map((tag) => (
           <span key={tag}>{tag}</span>

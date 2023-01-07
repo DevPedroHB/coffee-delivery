@@ -1,5 +1,5 @@
 import { Card } from "../../../../components/Card";
-import cafes from "../../../../utils/cafes.json";
+import { cafes } from "../../../../utils/cafes";
 import { CafesContainer, CafesGrid } from "./styles";
 
 export default function Cafes() {
