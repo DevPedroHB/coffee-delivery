@@ -60,32 +60,12 @@ export const Title = styled.div`
   }
 `;
 
-export const Items = styled.ul`
+export const InfoGrid = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
 
   @media screen and (max-width: 1024px) {
     grid-template-columns: repeat(1, 1fr);
-  }
-`;
-
-export const Item = styled.li<ItemsProps>`
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-
-  div {
-    width: 2rem;
-    height: 2rem;
-    background: ${(props) => props.theme[ITEM_COLORS[props.itemColor]]};
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    svg {
-      color: ${(props) => props.theme["background"]};
-    }
   }
 `;
