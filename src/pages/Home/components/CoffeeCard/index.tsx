@@ -1,9 +1,11 @@
 import { ShoppingCart } from "phosphor-react";
+import { useState } from "react";
 import { QuantityInput } from "../../../../components/QuantityInput";
+import { useCart } from "../../../../hooks/useCart";
 import { formatMoney } from "../../../../utils/formatMoney";
 import { Button, Buttons, Container, Footer, Info, Tags } from "./styles";
 
-interface CoffeeCardProps {
+export interface CoffeeProps {
   id: number;
   imgUrl: string;
   tags: string[];
@@ -12,33 +14,57 @@ interface CoffeeCardProps {
   price: number;
 }
 
-export function CoffeeCard({
-  id,
-  imgUrl,
-  tags,
-  name,
-  description,
-  price,
-}: CoffeeCardProps) {
+interface CoffeeCardProps {
+  coffee: CoffeeProps;
+}
+
+export function CoffeeCard({ coffee }: CoffeeCardProps) {
+  const [quantity, setQuantity] = useState(1);
+  const { addCoffeeToCart } = useCart();
+
+  function handleIncrease() {
+    setQuantity((state) => state + 1);
+  }
+
+  function handleDecrease() {
+    setQuantity((state) => state - 1);
+  }
+
+  function handleAddToCart() {
+    const coffeeToAdd = {
+      ...coffee,
+      quantity,
+    };
+
+    addCoffeeToCart(coffeeToAdd);
+  }
+
   return (
-    <Container key={id}>
-      <img src={`/coffees/${imgUrl}`} alt={`Imagem café ${name}`} />
+    <Container key={coffee.id}>
+      <img
+        src={`/coffees/${coffee.imgUrl}`}
+        alt={`Imagem café ${coffee.name}`}
+      />
       <Tags>
-        {tags.map((tag) => (
+        {coffee.tags.map((tag) => (
           <span key={tag}>{tag}</span>
         ))}
       </Tags>
       <Info>
-        <strong>{name}</strong>
-        <span>{description}</span>
+        <strong>{coffee.name}</strong>
+        <span>{coffee.description}</span>
       </Info>
       <Footer>
         <p>
-          R$ <span>{formatMoney(price)}</span>
+          R$ <span>{formatMoney(coffee.price)}</span>
         </p>
         <Buttons>
-          <QuantityInput quantity={3} />
-          <Button>
+          <QuantityInput
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
+            quantity={quantity}
+          />
+          <Button onClick={handleAddToCart}>
             <ShoppingCart weight="fill" size={22} />
           </Button>
         </Buttons>

@@ -5,6 +5,12 @@ export const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
 
+  > p {
+    font-size: 0.875rem;
+    grid-column: span 3;
+    color: ${(props) => props.theme["base-error"]};
+  }
+
   @media screen and (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
   }

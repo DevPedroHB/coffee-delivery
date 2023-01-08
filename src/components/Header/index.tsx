@@ -1,11 +1,12 @@
 import { MapPin, ShoppingCart } from "phosphor-react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import logoImg from "../../assets/coffee-delivery.svg";
+import { useCart } from "../../hooks/useCart";
 import { Action, HeaderContainer } from "./styles";
 
 export function Header() {
-  const [countCartItems, setCountCartItems] = useState(5);
+  const { cartQuantity } = useCart();
+
   return (
     <HeaderContainer>
       <Link to="/">
@@ -18,7 +19,7 @@ export function Header() {
         </span>
         <Link to="/checkout">
           <ShoppingCart size={22} weight="fill" />
-          {countCartItems != 0 && <span>{countCartItems}</span>}
+          {cartQuantity != 0 && <span>{cartQuantity}</span>}
         </Link>
       </Action>
     </HeaderContainer>

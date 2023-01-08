@@ -21,8 +21,10 @@ export function CheckoutForm() {
         <CardHeader iconColor="purple">
           <CurrencyDollar size={22} />
           <div>
-            <span>Endereço de Entrega</span>
-            <small>Informe o endereço onde deseja receber seu pedido</small>
+            <span>Pagamento</span>
+            <small>
+              O pagamento é feito na entrega. Escolha a forma que deseja pagar
+            </small>
           </div>
         </CardHeader>
         <PaymentMethods />

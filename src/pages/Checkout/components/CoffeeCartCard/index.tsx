@@ -1,25 +1,51 @@
 import { Trash } from "phosphor-react";
-import expressoImg from "../../../../assets/expresso.png";
 import { QuantityInput } from "../../../../components/QuantityInput";
+import { CartItem } from "../../../../contexts/CartContext";
+import { useCart } from "../../../../hooks/useCart";
+import { formatMoney } from "../../../../utils/formatMoney";
 import { Actions, Button, Container, Details, Info } from "./styles";
 
-export function CoffeeCartCard() {
+interface CoffeeCartCardProps {
+  coffee: CartItem;
+}
+
+export function CoffeeCartCard({ coffee }: CoffeeCartCardProps) {
+  const { changeCartItemQuantity, removeCartItem } = useCart();
+  const coffeeTotal = coffee.price * coffee.quantity;
+
+  function handleIncrease() {
+    changeCartItemQuantity(coffee.id, "increase");
+  }
+
+  function handleDecrease() {
+    changeCartItemQuantity(coffee.id, "decrease");
+  }
+
+  function handleRemove() {
+    removeCartItem(coffee.id);
+  }
+
   return (
     <Container>
       <Info>
-        <img src={expressoImg} alt={`Imagem café Expresso`} />
+        <img src={`/coffees/${coffee.imgUrl}`} alt={`Imagem café Expresso`} />
         <Details>
-          <span>Expresso Tradicional</span>
+          <span>{coffee.name}</span>
           <Actions>
-            <QuantityInput size="small" quantity={3} />
-            <Button type="button">
+            <QuantityInput
+              onIncrease={handleIncrease}
+              onDecrease={handleDecrease}
+              quantity={coffee.quantity}
+              size="small"
+            />
+            <Button type="button" onClick={handleRemove}>
               <Trash size={16} />
               Remover
             </Button>
           </Actions>
         </Details>
       </Info>
-      <span>R$ 9,90</span>
+      <span>R$ {formatMoney(coffeeTotal)}</span>
     </Container>
   );
 }

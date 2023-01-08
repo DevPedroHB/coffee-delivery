@@ -7,8 +7,8 @@ export function OurCoffees() {
     <Container id="cafes">
       <h1>Nossos Cafés</h1>
       <Grid>
-        {cafes.map((cafe) => (
-          <CoffeeCard key={cafe.id} {...cafe} />
+        {cafes.map((coffee) => (
+          <CoffeeCard key={coffee.id} coffee={coffee} />
         ))}
       </Grid>
     </Container>

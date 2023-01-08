@@ -55,6 +55,11 @@ export const Button = styled.button`
   cursor: pointer;
   transition: all 0.2s;
 
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
   &:hover {
     background: ${(props) => props.theme["yellow-dark"]};
   }
