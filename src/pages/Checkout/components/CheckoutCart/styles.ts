@@ -17,6 +17,15 @@ export const Container = styled.div`
 
 export const Card = styled(BaseCard)`
   border-radius: 6px 36px 6px 36px;
+  min-width: 20rem;
+
+  @media screen and (max-width: 1024px) {
+    min-width: 15rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    min-width: 10rem;
+  }
 `;
 
 export const Confirmation = styled.div`
@@ -60,7 +69,7 @@ export const Button = styled.button`
     cursor: not-allowed;
   }
 
-  &:hover {
+  &:not(:disabled):hover {
     background: ${(props) => props.theme["yellow-dark"]};
   }
 `;
